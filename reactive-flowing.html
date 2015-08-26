@@ -1,0 +1,25 @@
+<template name="layout1">
+    <div style="text-align:center;padding:1em;">
+        <div>
+            <a href="/">Home</a>&nbsp;
+            <a href="/user">User</a>&nbsp;
+            {{#if currentUser}}
+                <a href="#" id="signOut">SignOut [{{currentUser.username}}]</a>
+            {{else}}
+                <a href="#" id="signIn">SignIn</a>
+            {{/if}}
+        </div>
+        <hr>
+        <div>
+            {{> Template.dynamic template=main}}
+        </div>
+    </div>
+</template>
+
+<template name="home">
+    <h1>Home</h1>
+</template>
+
+<template name="user">
+    <h1>User: {{username}}</h1>
+</template>
